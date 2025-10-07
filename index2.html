@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ruthvik — Portfolio</title>
+  <meta name="description" content="Ruthvik — Computer Science student | Builder of AutoGrader AI | Web dev & AI enthusiast" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#00c2a8; --muted:#94a3b8; --glass:rgba(255,255,255,0.03);
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,#071226 0%, #071a22 60%); color:#e6eef6;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    .wrap{max-width:var(--maxw); margin:36px auto; padding:24px;}
+    header{display:flex; gap:20px; align-items:center; justify-content:space-between;}
+    .brand{display:flex; gap:16px; align-items:center;}
+    .avatar{
+      width:84px; height:84px; border-radius:14px; background:linear-gradient(135deg,var(--accent),#6be7d1);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#042028;font-size:28px;box-shadow:0 6px 18px rgba(2,6,23,0.6);
+    }
+    h1{margin:0;font-size:28px}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+    nav a{color:var(--muted); text-decoration:none; margin-left:12px; font-weight:600}
+    .hero{
+      margin-top:28px; display:grid; grid-template-columns:1fr 360px; gap:28px;
+    }
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:22px; border-radius:12px; box-shadow:0 6px 30px rgba(3,6,12,0.6);}
+    .about small{color:var(--muted)}
+    .btn{
+      display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#042028;font-weight:700;text-decoration:none;
+      box-shadow:0 6px 18px rgba(0,194,168,0.14);
+    }
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .chip{background:var(--glass); padding:8px 10px;border-radius:999px;color:var(--muted);font-weight:600;font-size:13px}
+    .projects{margin-top:18px; display:grid; gap:12px}
+    .proj{display:flex; gap:12px; align-items:flex-start; padding:12px; border-radius:10px; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005))}
+    .proj h4{margin:0;font-size:16px}
+    footer{margin-top:30px;color:var(--muted); font-size:13px; text-align:center}
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      header{flex-direction:column; align-items:flex-start; gap:14px}
+    }
+    /* contact form */
+    .contact-form input, .contact-form textarea{
+      width:100%; background:transparent; border:1px solid rgba(255,255,255,0.06); padding:10px 12px; color:inherit; border-radius:8px; font-size:14px;
+    }
+    .row{display:flex; gap:12px}
+    .row .col{flex:1}
+    .muted{color:var(--muted)}
+    .lang-toggle{margin-left:8px;font-size:13px;padding:6px 8px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+    .socials{display:flex; gap:10px; margin-top:8px}
+    .socials a{color:var(--muted); text-decoration:none; font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="avatar" aria-hidden="true">R</div>
+        <div>
+          <h1>Ruthvik</h1>
+          <p class="lead">18 · Computer Science student · Builder of <strong>AutoGrader AI</strong></p>
+        </div>
+      </div>
+      <div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="card about">
+          <h2>Hi — I'm <span style="color:var(--accent)">Ruthvik</span></h2>
+          <p class="muted">I’m a first-year Computer Science student from <strong>Guntur, Andhra Pradesh</strong>. I build web apps and AI tools — currently working on <strong>AutoGrader AI</strong> (automatic exam paper evaluator). I also run a Telugu-English YouTube facts channel and learning full-stack & DSA.</p>
+
+          <div style="margin-top:14px;">
+            <a class="btn" href="#" id="resumeLink">Download Resume</a>
+            <button class="lang-toggle" id="toggleTel">తెలుగు/EN</button>
+          </div>
+
+          <div class="skills" id="skillChips">
+            <div class="chip">Python</div>
+            <div class="chip">C</div>
+            <div class="chip">HTML/CSS/JS</div>
+            <div class="chip">Data Structures</div>
+            <div class="chip">AI / ML (learning)</div>
+            <div class="chip">Startup: AutoGrader AI</div>
+            <div class="chip">YouTube (facts)</div>
+          </div>
+
+          <div style="margin-top:12px" class="socials">
+            <a href="#" id="githubLink">GitHub</a>
+            <a href="#" id="linkedinLink">LinkedIn</a>
+            <a href="#" id="youtubeLink">YouTube</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <h3 style="margin-top:0">Contact</h3>
+          <p class="muted">Want to collaborate or hire? Email me or send a message below.</p>
+          <p style="margin:10px 0"><strong>Email:</strong> <a href="mailto:you@example.com" style="color:var(--accent); text-decoration:none">you@example.com</a></p>
+          <p class="muted">Location: Guntur, Andhra Pradesh, India</p>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Featured Projects</h3>
+          <div class="projects" id="projects">
+            <div class="proj">
+              <div style="min-width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#6be7d1);display:flex;align-items:center;justify-content:center;font-weight:700;color:#042028">AG</div>
+              <div>
+                <h4>AutoGrader AI</h4>
+                <p class="muted" style="margin:6px 0 0">AI system to evaluate student answers and score open-ended responses. Aim: reduce manual grading time for colleges & schools.</p>
+                <p class="muted" style="margin:6px 0 0;font-size:13px"><strong>Tech:</strong> Python, Flask, ML prototype</p>
+              </div>
+            </div>
+
+            <div class="proj">
+              <div style="min-width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#ffb86b,#ffdca3);display:flex;align-items:center;justify-content:center;font-weight:700;color:#042028">YT</div>
+              <div>
+                <h4>YouTube — Facts Channel</h4>
+                <p class="muted" style="margin:6px 0 0">Telugu-English fact videos (29-minute format). Script + visuals workflow, editing tips and royalty-free assets.</p>
+              </div>
+            </div>
+
+            <div class="proj">
+              <div style="min-width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#c9b3ff,#8da0ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#042028">WD</div>
+              <div>
+                <h4>Personal Web Projects</h4>
+                <p class="muted" style="margin:6px 0 0">Learning full-stack: small web apps, portfolio sites, and practice DSA visualizers.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <h3 style="margin-top:0">Quick Stats</h3>
+          <p class="muted" style="margin:6px 0">Open to internships · Building startup · Learning Japanese & abroad opportunities</p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="contact" style="margin-top:26px;">
+      <div class="card contact-form">
+        <h3 style="margin-top:0">Send a message</h3>
+        <form id="msgForm" onsubmit="sendMsg(event)">
+          <div class="row">
+            <div class="col"><input id="name" placeholder="Your name" required></div>
+            <div class="col"><input id="email" type="email" placeholder="Your email" required></div>
+          </div>
+          <div style="margin-top:10px">
+            <input id="subject" placeholder="Subject" required>
+          </div>
+          <div style="margin-top:10px">
+            <textarea id="message" rows="5" placeholder="Message" required></textarea>
+          </div>
+          <div style="margin-top:10px; display:flex; gap:10px; align-items:center;">
+            <button class="btn" type="submit">Send</button>
+            <small class="muted">This uses your mail app (mailto)</small>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>Made with ❤ · Contact: <a href="mailto:you@example.com" style="color:var(--accent);text-decoration:none">you@example.com</a></p>
+      <p class="muted" style="margin-top:8px">Tip: Replace placeholders (email, links, resume) inside this HTML file.</p>
+    </footer>
+  </div>
+
+  <script>
+    // small interactivity
+    document.getElementById('toggleTel').addEventListener('click', () => {
+      const about = document.querySelector('.about p.muted');
+      if (about.innerText.includes('AutoGrader')) {
+        about.innerText = "నేను గుంటూరు నుంచి ఒక మొదటి సంవత్సరం కంప్యూటర్ సైన్స్ విద్యార్థిని. నేను AutoGrader AI (పరీక్షల సమీక్ష కోసం AI) పై పనిచేస్తున్నాను, వెబ్ డెవ్ మరియు డీఎస్‌ఏ ని నేర్చుకుంటున్నాను. (Telugu-English mix)";
+      } else {
+        about.innerText = "I’m a first-year Computer Science student from Guntur, Andhra Pradesh. I build web apps and AI tools — currently working on AutoGrader AI (automatic exam paper evaluator). I also run a Telugu-English YouTube facts channel and learning full-stack & DSA.";
+      }
+    });
+
+    function sendMsg(e){
+      e.preventDefault();
+      const to = "you@example.com";
+      const subject = encodeURIComponent(document.getElementById('subject').value);
+      const body = encodeURIComponent(
+        "Name: " + document.getElementById('name').value + "\\n" +
+        "Email: " + document.getElementById('email').value + "\\n\\n" +
+        document.getElementById('message').value
+      );
+      window.location.href = mailto:${to}?subject=${subject}&body=${body};
+    }
+
+    // quick replace links placeholders if you want to set via JS
+    document.getElementById('githubLink').href = "https://github.com/your-username";
+    document.getElementById('linkedinLink').href = "https://www.linkedin.com/in/your-profile";
+    document.getElementById('youtubeLink').href = "https://www.youtube.com/your-channel";
+    document.getElementById('resumeLink').href = "#"; // replace with resume file url
+  </script>
+</body>
+</html>
